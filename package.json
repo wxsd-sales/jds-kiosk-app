@@ -1,8 +1,8 @@
 {
-  "name": "all4cust",
+  "homepage": "https://wxsd-sales.github.io/jds-kiosk-app",
+  "name": "jds-kiosk-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wxsd-sales.github.io/jds-kiosk-app",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
