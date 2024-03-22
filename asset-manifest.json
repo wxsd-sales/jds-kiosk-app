@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/jds-kiosk-app/static/css/main.36bb0542.css",
+    "main.js": "/jds-kiosk-app/static/js/main.99e8ba16.js",
+    "index.html": "/jds-kiosk-app/index.html",
+    "main.36bb0542.css.map": "/jds-kiosk-app/static/css/main.36bb0542.css.map",
+    "main.99e8ba16.js.map": "/jds-kiosk-app/static/js/main.99e8ba16.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36bb0542.css",
+    "static/js/main.99e8ba16.js"
+  ]
+}
