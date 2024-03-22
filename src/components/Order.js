@@ -19,6 +19,7 @@ function Order() {
   });
   const [idError, setIdError] = useState("");
   const [logo, setLogo] = useState("");
+  const [order, setOrder] = useState("");
 
   const queryParameters = new URLSearchParams(window.location.search);
   let LOCATION = decodeURIComponent(queryParameters.get("location"));
@@ -67,6 +68,8 @@ function Order() {
   useEffect(() => {
     const logo = localStorage.getItem("logo");
     setLogo(logo);
+    const order = localStorage.getItem("order");
+    setOrder(order);
     console.log(CUSTOMER_ID);
     const getQueryParams = () => {
       const queryParams = new URLSearchParams(window.location.search);
@@ -97,7 +100,9 @@ function Order() {
         <div className="navbar-brand">
           <Link
             className="navbar-item"
-            to={`/?logo=${encodeURIComponent(logo)}`}
+            to={`/?logo=${encodeURIComponent(logo)}&order=${encodeURIComponent(
+              order
+            )}`}
           >
             <FontAwesomeIcon icon="fa-solid fa-house" />
           </Link>
@@ -124,10 +129,7 @@ function Order() {
           >
             {/* Image in the modal */}
             <div>
-              <img
-                src="https://cdn.glitch.global/162db15e-db3c-41fb-8997-96647c7ffc2a/pdf-page.png?v=1706033718849"
-                alt="Modal Image"
-              />
+              <img src={order} alt="Modal Image" />
             </div>
 
             {/* Close button */}
