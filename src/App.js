@@ -30,7 +30,7 @@ library.add(
 
 function App() {
   return (
-    <Router>
+    <Router basename="/jds-kiosk-app">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/order" element={<Order />} />
