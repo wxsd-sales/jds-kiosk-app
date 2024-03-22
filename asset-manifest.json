@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/jds-kiosk-app/static/css/main.36bb0542.css",
-    "main.js": "/jds-kiosk-app/static/js/main.53c4434d.js",
+    "main.js": "/jds-kiosk-app/static/js/main.6a96c0d9.js",
     "index.html": "/jds-kiosk-app/index.html",
     "main.36bb0542.css.map": "/jds-kiosk-app/static/css/main.36bb0542.css.map",
-    "main.53c4434d.js.map": "/jds-kiosk-app/static/js/main.53c4434d.js.map"
+    "main.6a96c0d9.js.map": "/jds-kiosk-app/static/js/main.6a96c0d9.js.map"
   },
   "entrypoints": [
     "static/css/main.36bb0542.css",
-    "static/js/main.53c4434d.js"
+    "static/js/main.6a96c0d9.js"
   ]
 }
