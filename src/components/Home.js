@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
 
@@ -91,12 +92,12 @@ function Home() {
         aria-label="main navigation"
       >
         <div className="navbar-brand">
-          <a
+          <Link
             className="navbar-item"
-            href={`/?logo=${encodeURIComponent(logo)}`}
+            to={`/?logo=${encodeURIComponent(logo)}`}
           >
             <FontAwesomeIcon icon="fa-solid fa-house" />
-          </a>
+          </Link>
 
           <a
             role="button"
