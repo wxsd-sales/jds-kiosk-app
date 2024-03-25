@@ -11,7 +11,6 @@ function Order() {
   const { state } = useLocation();
   let navigate = useNavigate();
   const [name, setName] = useState("");
-  const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -38,7 +37,7 @@ function Order() {
     "#command=agent-connect&customerId=" +
     CUSTOMER_ID +
     "&customerName=" +
-    encodeURIComponent(displayName) +
+    encodeURIComponent(name) +
     "&customerEmail=" +
     encodeURIComponent(email);
 
@@ -83,6 +82,7 @@ function Order() {
     // Get query parameters
     const queryParams = getQueryParams();
     setName(queryParams.firstName);
+    setEmail(queryParams.email);
   }, []);
 
   const handleAgentConnect = (state) => {

@@ -65,7 +65,7 @@ function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const apiUrl = `https://all4jds.glitch.me/firstName/${formData.name}`;
+    const apiUrl = `https://all4jds.glitch.me/detail/${formData.name}`;
 
     // Define your headers
     const headers = {
@@ -80,12 +80,15 @@ function Home() {
           console.log(response.data);
 
           const name = response.data.name;
+          const email = response.data.email;
           setIdError("");
           navigate(
             ORDER_PATH +
               formData.name +
               "&firstName=" +
               name +
+              "&email=" +
+              email +
               HASH_COMMAND_ARRIVED +
               formData.name +
               "&channelType=Visit"
