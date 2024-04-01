@@ -13,8 +13,8 @@ import {
   faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Order from "./components/Order";
+import Home from "./components/home/Home";
+import Order from "./components/order/Order";
 
 library.add(
   faEnvelope,

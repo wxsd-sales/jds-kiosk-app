@@ -1,15 +1,10 @@
-// components/home/Home.jsx
-
 import React, { useState, useEffect } from "react";
-import { Button } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "axios";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../common/Navbar";
 import { getQueryParams } from "../../utils/helpers";
 import { fetchCustomerName } from "../../services/apiService";
 import CustomerIDForm from "./CustomerIDForm";
+import { generateOrderUrl } from "../../services/redirectService";
 import ErrorMessage from "./ErrorMessage";
 
 function Home() {
@@ -20,7 +15,7 @@ function Home() {
   const [logoError, setLogoError] = useState(false);
   const [orderError, setOrderError] = useState(false);
   const [idError, setIdError] = useState("");
-  const queryParams = getQueryParams(); // Define queryParams here
+  const queryParams = getQueryParams();
 
   useEffect(() => {
     if (!queryParams.logo) {
@@ -37,7 +32,7 @@ function Home() {
       localStorage.setItem("order", queryParams.order);
       setOrder(queryParams.order);
     }
-  }, [queryParams]); // Add queryParams to dependency array
+  }, [queryParams]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -48,13 +43,13 @@ function Home() {
     fetchCustomerName(formData.name)
       .then((resp) => {
         setIdError("");
-        navigate(
-          `/order?location=${encodeURIComponent(
-            queryParams.location
-          )}&customerId=${formData.name}&firstName=${
-            resp.data.name
-          }&command=arrived&channelType=Visit`
+        const orderUrl = generateOrderUrl(
+          queryParams.location,
+          formData.name,
+          resp.data.name,
+          resp.data.email
         );
+        navigate(orderUrl);
       })
       .catch((error) => {
         setIdError("Entered Customer ID is not found");

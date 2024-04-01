@@ -5,5 +5,6 @@ export const getQueryParams = () => {
   for (const [key, value] of queryParams.entries()) {
     params[key] = value;
   }
+  params["location"] = decodeURIComponent(queryParams.get("location"));
   return params;
 };
